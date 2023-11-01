@@ -1,0 +1,14 @@
+{
+  "name": "hax.t3",
+  "version": "0.0.1",
+  "description": "clothes that go woosh",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "T3hCyberRat",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
