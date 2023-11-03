@@ -8,13 +8,20 @@
 <title>Experiment_clothing_0</title>
 
 <!-- import aframe and then ar.js with image tracking / location based features -->
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
 <script>
 
-    let a = document.querySelector("nft-marker").object3D;
-    console.log(a);
+    AFRAME.registerComponent('log', {
+        schema: { type: 'string' },
+
+        init: function () {
+            var stringToLog = this.data;
+            console.log(stringToLog);
+        }
+    });
 
     // AFRAME.registerComponent('vidhandler', {
     //     init: function () {
@@ -70,13 +77,14 @@
         <!-- a-nft is the anchor that defines an Image Tracking entity -->
         <!-- on 'url' use the path to the Image Descriptors created before. -->
         <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-        <a-nft id="nft-marker" type="nft" url="https://t3hcyberrat.github.io/ctest.t3/assets/test_4" smooth="true" smoothCount="10"
-            smoothTolerance=".01" smoothThreshold="5">
+        <a-nft id="nft-marker" type="nft" url="https://t3hcyberrat.github.io/ctest.t3/assets/test_4" smooth="true"
+            smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
             <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
             <!-- <a-entity gltf-model="assets/34.glb" scale="40 40 40" position="10 10 -100">
                 </a-entity> -->
 
-            <a-video id="#vid" width="160" height="100" rotation="-90" position="10 10 -100" src="assets/test_11.mp4"></a-video>
+            <a-video id="#vid" width="160" height="100" rotation="-90" position="10 10 -100"
+                src="assets/test_11.mp4"></a-video>
         </a-nft>
         <!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
