@@ -14,13 +14,12 @@
 
 <script>
 
-    AFRAME.registerComponent('log', {
-        schema: { type: 'string' },
-
+    AFRAME.registerComponent('markerhandler', {
         init: function () {
-            var stringToLog = this.data;
-            console.log(stringToLog);
-        }
+            this.el.sceneEl.addEventListener('markerFound', () => {
+                console.log("hello_world")
+            });
+        },
     });
 
     // AFRAME.registerComponent('vidhandler', {
@@ -77,7 +76,7 @@
         <!-- a-nft is the anchor that defines an Image Tracking entity -->
         <!-- on 'url' use the path to the Image Descriptors created before. -->
         <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-        <a-nft id="nft-marker" type="nft" url="https://t3hcyberrat.github.io/ctest.t3/assets/test_4" smooth="true"
+        <a-nft markerhandler type="nft" url="https://t3hcyberrat.github.io/ctest.t3/assets/test_4" smooth="true"
             smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
             <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
             <!-- <a-entity gltf-model="assets/34.glb" scale="40 40 40" position="10 10 -100">
