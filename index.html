@@ -16,16 +16,20 @@
 
     AFRAME.registerComponent('markerhandler', {
         init: function () {
-            this.el.sceneEl.addEventListener('markerFound', () => {
-                console.log("hello_world")
-            });
+                // this.toggle = false;
+                // document.querySelector("#vid").pause(); //reference to the video
         },
+        tick: function () {
+            if (this.sceneEl.addEventListener('markerFound') == true) {
+                console.log("found");
+            } else {
+                console.log("lost");
+            }
+        }
     });
 
     // AFRAME.registerComponent('vidhandler', {
     //     init: function () {
-    //         this.toggle = false;
-    //         document.querySelector("#vid").pause(); //reference to the video
     //     },
     //     tick: function () {
     //         if (document.querySelector("nft-marker").object3D.visible == true) {
