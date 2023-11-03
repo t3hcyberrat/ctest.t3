@@ -16,14 +16,14 @@
 
     AFRAME.registerComponent('markerhandler', {
         init: function () {
-            this.sceneEl.addEventListener('markerFound', (event) => {
+            this.el.sceneEl.addEventListener('markerFound', (event) => {
                 this.toggle = false;
                 document.querySelector("#vid").pause(); //reference to the video
-                
+
                 console.log("lost");
             });
 
-            this.sceneEl.addEventListener('markerFound', (event) => {
+            this.el.sceneEl.addEventListener('markerFound', (event) => {
                 console.log("found");
             });
         },
