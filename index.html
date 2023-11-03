@@ -19,12 +19,13 @@
 
             this.el.sceneEl.addEventListener('markerLost', (event) => {
                 document.getElementById("video").pause(); //reference to the video
-                // this.toggle = false;
 
                 console.log("lost");
             });
 
             this.el.sceneEl.addEventListener('markerFound', (event) => {
+                document.getElementById("video").play(); //reference to the video
+
                 console.log("found");
             });
         },
