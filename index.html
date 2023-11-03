@@ -20,7 +20,9 @@
                 document.querySelector("#vid").pause(); //reference to the video
         },
         tick: function () {
-            console.log(this.sceneEl.addEventListener('markerFound'))
+            this.sceneEl.addEventListener('markerFound', (event) => {
+                console.log(evet)
+            });
             // if (this.sceneEl.addEventListener('markerFound') == true) {
             //     console.log("found");
             // } else {
