@@ -16,7 +16,7 @@
 
     AFRAME.registerComponent('markerhandler', {
         init: function () {
-            this.el.sceneEl.addEventListener('markerFound', (event) => {
+            this.el.sceneEl.addEventListener('markerLost', (event) => {
                 this.toggle = false;
                 document.querySelector("#vid").pause(); //reference to the video
 
